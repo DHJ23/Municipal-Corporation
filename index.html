@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon"> 
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4 mx-auto d-flex justify-content-center align-items-center">
+                <table border="1" class="bg-dark">
+                    <tr>
+                        <td colspan="5">
+                            <div id="disp-container">
+                                <div class="dis1">
+                                    <small></small>
+                                    <small></small>
+                                </div>
+                                <div id="h1">
+                                    <small></small>
+                                    <small> <input id="screen" type="text" placeholder="0"></small>
+                                    <h3><input id="scrren2" type="text"></h3>
+                                    
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="py-auto">
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>DEG</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>F-E</button></td>
+                    </tr>
+                    <tr class="py-auto">
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>MC</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>MR</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>M+</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>M-</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>MS</button></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><button class="btn btn-sm btn-secondary text-white top" onclick='getElementById("h1").innerHTML=bsp()'>Trignometry <i class="fa fas fa-angle-down" style="color: white; font-size: 14px;"></i></button></td>
+                        <td colspan="2"><button class="btn btn-secondary text-white top" onclick='getElementById("h1").innerHTML=bsp()'>Function <i class="fa fas fa-angle-down" style="color: white; font-size: 14px;"></i></button></td>
+                    </tr>
+
+                    <tr class="py-auto">
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>2<sup>nd</sup></button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>&prod;</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>e</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick="screen.value=''">C</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick="backspc()">&#9003;</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>x<sup>2</sup></button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'><sup>1</sup>&frasl;<sub>x</sub></button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>|x|</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>exp</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>mode</button></td>
+                    </tr>
+
+                    <tr class="py-4">
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>2&radic;<span style="text-decoration: overline">x</span></button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>(</td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>)</button></td>
+                        <td><button class="btn btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>n!</button></td>
+                        <td><button class="btn btn-secondary text-white mathfun" onclick='getElementById("h1").innerHTML=bsp()'>÷</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>x<sup>y</sup></button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt bn">7</td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt bn">8</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt bn">9</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathfun bn">×</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>10<sup>x</sup></button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>4</td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>5</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>6</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathfun" onclick='getElementById("h1").innerHTML=bsp()'>-</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm btn-secondary text-white " onclick='getElementById("h1").innerHTML=bsp()'>log</td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>1</td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>2</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>3</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathfun" onclick='getElementById("h1").innerHTML=bsp()'>+</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm btn-secondary text-white" onclick='getElementById("h1").innerHTML=bsp()'>in</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'><sup>+</sup>&frasl;<sub>-</sub> </button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white mathdigt" onclick='getElementById("h1").innerHTML=bsp()'>0</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white dot" onclick='getElementById("h1").innerHTML=bsp()'>.</button></td>
+                        <td><button class="btn btn-sm btn-secondary text-white equal"  onclick="screen.value=eval(screen.value)">=</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
